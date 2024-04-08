@@ -1,4 +1,5 @@
-﻿(deffacts people
+﻿; факти про осіб та можливі професії
+(deffacts people
     (person Voronko)
     (person Pavlenko)
     (person Levytsky)
@@ -12,6 +13,7 @@
     (profession writer)
 )
 
+; факти, що відображають відому інформацію з задачі
 (deffacts known-information
     (saw-concert Voronko singer)
     (saw-concert Levytsky singer)
@@ -22,6 +24,7 @@
     (never-heard-of Voronko Levytsky)
 )
 
+; правила для виведення професій кожної особи
 (defrule determine-professions
     ?p1 <- (posed-with Pavlenko ?profession1)
     ?p2 <- (posed-with ?profession1 artist)
